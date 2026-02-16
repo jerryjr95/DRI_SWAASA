@@ -41,10 +41,6 @@ SPECTRAL_FEATURES = [
 ]
 SPECTRAL_INDIVIDUAL_FROM_AUDIO = [os.path.join(SPECTRAL_FROM_AUDIO_DIR, f) for f in SPECTRAL_FEATURES]
 
-# Original individual directories (kept for backward compatibility)
-MFCC_INDIVIDUAL_DIRS = [os.path.join(PLOTS_DIR, f"mfcc{i}") for i in range(1, 14)]
-SPECTRAL_INDIVIDUAL_DIRS = [os.path.join(PLOTS_DIR, f) for f in SPECTRAL_FEATURES]
-
 # Ensure folders exist
 paths_to_create = [
     PROCESSED_AUDIO_DIR,
@@ -57,7 +53,11 @@ paths_to_create = [
     SPECTROGRAMS_FROM_AUDIO_DIR,
     CHROMA_FROM_AUDIO_DIR,
     MFCC_HEATMAPS_FROM_AUDIO_DIR
-] + MFCC_INDIVIDUAL_DIRS + SPECTRAL_INDIVIDUAL_DIRS + MFCC_INDIVIDUAL_FROM_AUDIO + SPECTRAL_INDIVIDUAL_FROM_AUDIO
+]
+
+# Add individual subdirectories
+paths_to_create.extend(MFCC_INDIVIDUAL_FROM_AUDIO)
+paths_to_create.extend(SPECTRAL_INDIVIDUAL_FROM_AUDIO)
 
 for path in paths_to_create:
     os.makedirs(path, exist_ok=True)

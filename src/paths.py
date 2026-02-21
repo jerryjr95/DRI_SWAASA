@@ -23,6 +23,7 @@ SPECTRAL_FROM_AUDIO_DIR = os.path.join(PLOTS_FROM_AUDIO_DIR, "spectral")
 SPECTROGRAMS_FROM_AUDIO_DIR = os.path.join(PLOTS_FROM_AUDIO_DIR, "spectrograms")
 CHROMA_FROM_AUDIO_DIR = os.path.join(PLOTS_FROM_AUDIO_DIR, "chroma")
 MFCC_HEATMAPS_FROM_AUDIO_DIR = os.path.join(PLOTS_FROM_AUDIO_DIR, "mfcc_heatmaps")
+POLLUTANTS_GRAPHS_DIR = os.path.join(PLOTS_DIR, "pollutants_graphs")
 
 # Individual MFCC coefficient folders (in plots_from_audio)
 MFCC_INDIVIDUAL_FROM_AUDIO = [os.path.join(MFCC_FROM_AUDIO_DIR, f"mfcc{i}") for i in range(1, 14)]
@@ -41,6 +42,10 @@ SPECTRAL_FEATURES = [
 ]
 SPECTRAL_INDIVIDUAL_FROM_AUDIO = [os.path.join(SPECTRAL_FROM_AUDIO_DIR, f) for f in SPECTRAL_FEATURES]
 
+# Pollutants graphs subdirectories
+POLLUTANTS_MONTHLY_DIR = os.path.join(POLLUTANTS_GRAPHS_DIR, "monthly_plots")
+POLLUTANTS_TREND_DIR = os.path.join(POLLUTANTS_GRAPHS_DIR, "trend_analysis")
+
 # Ensure folders exist
 paths_to_create = [
     PROCESSED_AUDIO_DIR,
@@ -52,7 +57,10 @@ paths_to_create = [
     SPECTRAL_FROM_AUDIO_DIR,
     SPECTROGRAMS_FROM_AUDIO_DIR,
     CHROMA_FROM_AUDIO_DIR,
-    MFCC_HEATMAPS_FROM_AUDIO_DIR
+    MFCC_HEATMAPS_FROM_AUDIO_DIR,
+    POLLUTANTS_GRAPHS_DIR,
+    POLLUTANTS_MONTHLY_DIR,
+    POLLUTANTS_TREND_DIR
 ]
 
 # Add individual subdirectories
